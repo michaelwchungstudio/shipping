@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # get 'boats/show'
   devise_for :users
   root to: "welcome#index"
-  get "/users/:id", to: "users#profile"
+  get "/users/:id" => "users#profile", :as => :user_profile
 
   resources :boats
   resources :jobs

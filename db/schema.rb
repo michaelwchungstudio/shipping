@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_173903) do
+ActiveRecord::Schema.define(version: 2018_11_19_195434) do
 
   create_table "boats", force: :cascade do |t|
     t.string "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_173903) do
     t.float "cost"
     t.integer "containers_needed"
     t.string "descrip"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
