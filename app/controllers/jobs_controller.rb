@@ -20,11 +20,15 @@ class JobsController < ApplicationController
   def edit
     @job = Job.where(id: params[:id]).first
   end
+  
   def update
     @job = Job.where(id: params[:id]).first
     @job.update(jobs_params)
-    @job.save
-    redirect_to "/"
+    if @job.save
+      redirect_to "/jobs/#{@job.id}"
+    else
+      render "/jobs/#{@job.id}/edit"
+    end
   end
 
   def delete
