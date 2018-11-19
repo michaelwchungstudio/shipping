@@ -1,3 +1,31 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+.navbar{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	font-size: 2em;
+}
+.nav1{
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	list-style: none;
+}
+.nav2{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	list-style: none;
+}
+.navbar ul li a{
+	text-decoration: none;
+	color: black;
+}
+.navbar ul li a:hover{
+	font-weight: bolder;
+}
+.main-container{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
