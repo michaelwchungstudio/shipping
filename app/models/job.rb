@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  has_many :boats, through :boats_jobs
+  has_and_belongs_to_many :boats, through: :boats_jobs
 
   validates :name, uniqueness: true
   validates :cost, numericality: { greater_than_or_equal_to: 100 }

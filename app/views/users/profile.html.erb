@@ -1,0 +1,15 @@
+<h1>This is a user profile</h1>
+
+<div>username/email: <%= @user.email %></div>
+
+<h2>jobs</h2>
+
+<% @jobs.each do |j| %>
+  <div>job name: <%= j.name %></div>
+  <div>origin: <%= j.origin %></div>
+  <div>destination: <%= j.destination %></div>
+  <div>cost: $<%= j.cost %></div>
+  <div>containers needed: <%= j.containers_needed %></div>
+  <div>description: <%= j.descrip %></div>
+  <hr>
+<% end %>
