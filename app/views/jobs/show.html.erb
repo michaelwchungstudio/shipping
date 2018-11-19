@@ -1,2 +1,10 @@
-<h1>Jobs#show</h1>
-<p>Find me in app/views/jobs/show.html.erb</p>
+<div class="job-show-wrapper">
+	<h1>Job: </h1>
+	<div><%= @job.name %></div>
+	<div><%= @job.origin %></div>
+	<div><%= @job.destination %></div>
+	<div><%= @job.descrip %></div>
+	<div><%= @job.cost %></div>
+	<div><%= @job.containers_needed %></div>
+	<%= link_to "Edit this job", edit_job_path(@job) %>
+</div>
