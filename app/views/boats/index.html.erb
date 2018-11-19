@@ -1,2 +1,13 @@
-<h1>Boats#index</h1>
-<p>Find me in app/views/boats/index.html.erb</p>
+<h1>Boats</h1>
+<% @boat.each do |b|%>
+  <div class="">
+    <a href="/boats/<%= b.id%>">Boat name:</a> <strong><%= b.name %></strong>
+  </div>
+  <div class="">
+    Boat Container Number: <strong><%= b.no_containers %></strong>
+  </div>
+  <div class="">
+    Boat location:  <strong><%= b.loc %></strong>
+  </div>
+  <br>
+<% end %>
