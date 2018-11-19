@@ -1,2 +1,14 @@
-<h1>Jobs#new</h1>
-<p>Find me in app/views/jobs/new.html.erb</p>
+<h1> lets make a new job </h1>
+
+<% if user_signed_in? %>
+<% puts current_user.id %>
+  <%= form_for Job.new do |j| %>
+    <%= j.text_field :name, placeholder: "job name" %>
+    <%= j.text_field :origin, placeholder: "origin" %>
+    <%= j.text_field :destination, placeholder: "destination" %>
+    <%= j.number_field :cost, :step => 0.01, placeholder: "cost ($xxxx.xx)" %>
+    <%= j.number_field :containers_needed, placeholder: "num containers needed" %>
+    <%= j.text_area :descrip, placeholder: "description" %>
+    <%= j.submit 'submit' %>
+  <% end %>
+<% end %>
