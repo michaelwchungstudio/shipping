@@ -1,7 +1,7 @@
 <h1>Boats</h1>
 <% @boat.each do |b|%>
   <div class="">
-    Boat name: <strong><%= b.name %></strong>
+    <a href="/boats/<%= b.id%>">Boat name:</a> <strong><%= b.name %></strong>
   </div>
   <div class="">
     Boat Container Number: <strong><%= b.no_containers %></strong>
