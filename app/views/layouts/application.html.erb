@@ -7,12 +7,31 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
   </head>
 
   <body>
+    <nav class="navbar">
+      <ul class="nav1">
+        <% if user_signed_in? %>
+          <li> <%= link_to "Sign Out", destroy_user_session_path(current_user) %></li>
+          <li><%= link_to "Your Profile", user_profile_path(current_user) %>  </li>       
+        <% else %>
+          <li><a href="/users/sign_in">Login</a></li>
+          <li><a href="/users/sign_up">Sign Up</a></li>
+        <% end %>
+      </ul>
+      <ul class="nav2">
+        <li><a href="/">Home</a></li>
+        <li><a href="/jobs">Jobs</a></li>
+        <li><a href="/boats">Boats</a></li>
+      </ul>
+    </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
-    <%= yield %>
+    <div class="main-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

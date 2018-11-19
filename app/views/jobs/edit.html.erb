@@ -1,2 +1,13 @@
-<h1>Jobs#edit</h1>
-<p>Find me in app/views/jobs/edit.html.erb</p>
+<div class="job-edit-wrapper">
+<%= form_for @job do |j| %>
+
+
+<div>Name: <%= j.text_field :name, placeholder: "#{@job.name}" %> </div>
+<div>Origin: <%= j.text_field :origin, placeholder: "#{@job.origin}"%></div>
+<div>Destination: <%= j.text_field :destination, placeholder: "#{@job.destination}" %> </div>
+<div>Containers Needed: <%= j.number_field :containers_needed , placeholder: "#{@job.cost}"%></div>
+<div>Cost: <%= j.number_field :cost, step: :any %></div>
+<div>Description: <%= j.text_area :descrip, placeholder: "#{@job.descrip}"%></div>
+<div><%= j.submit %></div>
+<% end %>
+</div>
