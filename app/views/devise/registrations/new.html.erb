@@ -1,37 +1,23 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-
-    <%= f.submit "Sign Up", :class => "form-button" %>
-<% end %>
-
-
-
 <div class='registration-content'>
-  <h2 class='page-title'>Log in</h2>
+  <h2 class='page-title'>Sign up</h2>
 
   <div class='registration-form'>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.label :email, :class => "form-title" %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <%= f.label :email, :class => "form-title" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-text-field" %>
 
       <%= f.label :password, :class => "form-title" %>
-      <%= f.password_field :password, autocomplete: "current-password", :class => "form-text-field" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password", :class => "form-text-field" %>
 
-      <%= f.submit "Submit", :class => "form-button" %>
+      <%= f.label :password_confirmation, :class => "form-title" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-text-field" %>
+
+      <%= f.submit "Sign Up", :class => "form-button" %>
     <% end %>
   </div>
 </div>
