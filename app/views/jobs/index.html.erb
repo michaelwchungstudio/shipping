@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-	<% link_to "New Job", new_job_path %>
+	<%= link_to "Create a New Job", new_job_path %>
 <% end %>
 <% if @jobs.length != 0 %>
 <div class="job-wrapper">
