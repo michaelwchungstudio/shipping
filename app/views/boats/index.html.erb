@@ -1,6 +1,8 @@
 <div class='boat-wrapper'>
   <h2 class='page-title'>Boats</h2>
 
+  <%= link_to 'Create Boat', new_boat_path %>
+
   <% @boat.each_with_index do |b, i| %>
     <div class='boat-listing'>
       <% if i % 5 == 1 %>
