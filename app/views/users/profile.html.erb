@@ -1,15 +1,20 @@
-<h1>This is a user profile</h1>
-
-<div>username/email: <%= @user.email %></div>
-
-<h2>jobs</h2>
-
-<% @jobs.each do |j| %>
-  <div>job name: <%= j.name %></div>
-  <div>origin: <%= j.origin %></div>
-  <div>destination: <%= j.destination %></div>
-  <div>cost: $<%= j.cost %></div>
-  <div>containers needed: <%= j.containers_needed %></div>
-  <div>description: <%= j.descrip %></div>
-  <hr>
-<% end %>
+<div class='profile-wrapper'>
+  <div class='profile-information'>
+    <div class='profile-picture'>
+    </div>
+    <div class='profile-text'>E-mail: <%= @user.email %></div>
+  </div>
+  <div class='profile-job-listings'>
+    <h2 class='jobs-title'>Jobs</h2>
+    <% @jobs.each do |j| %>
+      <div class='job-listing'>
+        <div><span class='job-listing-property-title'>Name</span>: <a href="/jobs/<%= j.id %>"><%= j.name %></a></div>
+        <div><span class='job-listing-property-title'>Origin</span>: <%= j.origin %></div>
+        <div><span class='job-listing-property-title'>Destination</span>: <%= j.destination %></div>
+        <div><span class='job-listing-property-title'>Cost</span>: $<%= j.cost %></div>
+        <div><span class='job-listing-property-title'>Containers Needed</span>: <%= j.containers_needed %></div>
+        <div><span class='job-listing-property-title'>Description</span>: <%= j.descrip %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
