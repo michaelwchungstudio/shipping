@@ -1,3 +1,67 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-wrapper {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 4rem;
+  width: 68%;
+  margin: 5rem auto;
+}
+
+.profile-information {
+  position: relative;
+}
+
+.profile-information:after {
+  content: '';
+  width: 1px;
+  height: 325px;
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.profile-picture {
+  height: 250px;
+  width: 250px;
+  background-image: url('placeholderprofilepic.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin: 18px auto 25px;
+}
+
+.profile-text {
+  font-size: 0.85em;
+  text-align: center;
+}
+
+.jobs-title {
+  font-size: 1.4em;
+  margin-left: 35%;
+  margin-bottom: 3.75rem;
+}
+
+.job-listing {
+  margin: 2rem 0;
+
+  div {
+    margin: 2px 0;
+
+    a {
+      text-decoration: none;
+      color: red;
+    }
+
+    a:hover {
+      font-weight: 600;
+    }
+  }
+}
+
+.job-listing-property-title {
+  font-weight: 700;
+}

@@ -6,10 +6,15 @@
 	<div><%= @job.descrip %></div>
 	<div><%= @job.cost %></div>
 	<div><%= @job.containers_needed %></div>
+	<div>Boats: </div>
 	<% b = @job.boats %>
+	<% if b.length != 0%>
 		<% for boat in b %>
 			<div><%= boat.name %></div>
 		<% end %>
+	<% else %>
+		<div>No boats assigned to this job</div>
+	<% end %>
 	<div>
 		<%= link_to "Edit this job", edit_job_path(@job) %>
 		<%= link_to 'Delete this job',  @job,  method: :delete, data: { confirm: 'Are you sure?' } %>

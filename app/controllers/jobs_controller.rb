@@ -25,6 +25,18 @@ class JobsController < ApplicationController
   def update
     @job = Job.where(id: params[:id]).first
     @job.update(jobs_params)
+    boat = params[:boats]
+    boat_remove = params[:boats_remove]
+    p boat_remove
+    p boat
+    if boat != ""
+      @boat = Boat.where(id: boat).first
+      @job.boats << @boat
+    end
+    if boat_remove != ""
+      @boat_remove = Boat.where(id: boat_remove).first
+      @job.boats.delete(@boat_remove)
+    end
     if @job.save
       redirect_to "/jobs/#{@job.id}"
     else
