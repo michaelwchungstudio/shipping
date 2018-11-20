@@ -21,7 +21,7 @@ class JobsController < ApplicationController
     @job = Job.where(id: params[:id]).first
     @boats = Boat.all
   end
-  
+
   def update
     @job = Job.where(id: params[:id]).first
     @job.update(jobs_params)
@@ -40,6 +40,7 @@ class JobsController < ApplicationController
 
     @boats = Boat.all
   end
+
 
 
 
