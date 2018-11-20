@@ -30,7 +30,7 @@ class BoatsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     boat = Boat.find(params[:id])
     if boat.destroy
       redirect_to root_path
