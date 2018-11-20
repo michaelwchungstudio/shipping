@@ -1,13 +1,28 @@
 <div class="job-edit-wrapper">
+
+<% holder = [] %>
+<% checker = false %>
+
+<% for b in @boats %>
+	<% if b.jobs != nil %>
+		<% if b.jobs.include?(@job) == false %>
+			<% holder.push(b) %>
+		<% end %>
+	<% else %>
+		<% holder.push(b) %>
+	<% end %>
+<% end %>
 <%= form_for @job do |j| %>
 
 
+
+Add boat to job: <%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ) %>
 <div>Name: <%= j.text_field :name, placeholder: "#{@job.name}" %> </div>
 <div>Origin: <%= j.text_field :origin, placeholder: "#{@job.origin}"%></div>
 <div>Destination: <%= j.text_field :destination, placeholder: "#{@job.destination}" %> </div>
 <div>Containers Needed: <%= j.number_field :containers_needed , placeholder: "#{@job.cost}"%></div>
 <div>Cost: <%= j.number_field :cost, step: :any %></div>
 <div>Description: <%= j.text_area :descrip, placeholder: "#{@job.descrip}"%></div>
-<div><%= j.submit %></div>
+<%= j.submit %>
+
 <% end %>
-</div>

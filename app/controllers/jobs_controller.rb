@@ -19,6 +19,7 @@ class JobsController < ApplicationController
 
   def edit
     @job = Job.where(id: params[:id]).first
+    @boats = Boat.all
   end
   
   def update
@@ -36,11 +37,15 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.where(id: params[:id]).first
+
+    @boats = Boat.all
   end
+
+
 
   private
 
   def jobs_params
-    params.require(:job).permit(:name, :origin, :destination, :cost, :containers_needed, :descrip, :user_id)
+    params.require(:job).permit(:name, :origin, :destination, :cost, :containers_needed, :descrip, :user_id, :boat)
   end
 end
