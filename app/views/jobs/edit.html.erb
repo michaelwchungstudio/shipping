@@ -20,12 +20,12 @@
 <%= form_for @job do |j| %>
 
 
-<% if counter <= @job.containers_needed %>
-<div class="show-form-wrapper-long">
-	<div>Add a boat: </div><div><%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ), :include_blank => true %></div>
-<% else %>
-	<div class="show-form-wrapper-short">
-<% end %>
+	<% if counter <= @job.containers_needed %>
+	<div class="show-form-wrapper-long">
+		<div>Add a boat: </div><div><%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ), :include_blank => true %></div>
+	<% else %>
+		<div class="show-form-wrapper-short">
+	<% end %>
 	<div>Remove a boat: </div><div><%= select_tag "boats_remove", options_from_collection_for_select(@job.boats, "id", :showcase ), :include_blank => true %></div>
 	<div>Name: </div><div><%= j.text_field :name, placeholder: "#{@job.name}" %> </div>
 	<div>Origin: </div><div> <%= j.text_field :origin, placeholder: "#{@job.origin}"%></div>
