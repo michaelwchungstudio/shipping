@@ -19,6 +19,7 @@ class BoatsController < ApplicationController
 
   def edit
     @boat = Boat.find(params[:id])
+    @job = Job.where(id: params[:id]).first
   end
 
   def update

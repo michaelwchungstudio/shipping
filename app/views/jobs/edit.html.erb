@@ -12,11 +12,18 @@
 		<% holder.push(b) %>
 	<% end %>
 <% end %>
+<% counter = 0 %>
+<% for b in @job.boats %>
+	<% counter += b.no_containers %>
+<% end %>
+
 <%= form_for @job do |j| %>
 
 
-
-Add boat to job: <%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ) %>
+<% if counter <= @job.containers_needed %>
+	<div>Add boat to job: <%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ), :include_blank => true %></div>
+<% end %>
+<div>Remove boat to job: <%= select_tag "boats_remove", options_from_collection_for_select(@job.boats, "id", :showcase ), :include_blank => true %></div>
 <div>Name: <%= j.text_field :name, placeholder: "#{@job.name}" %> </div>
 <div>Origin: <%= j.text_field :origin, placeholder: "#{@job.origin}"%></div>
 <div>Destination: <%= j.text_field :destination, placeholder: "#{@job.destination}" %> </div>

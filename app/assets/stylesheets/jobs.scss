@@ -1,3 +1,37 @@
 // Place all the styles related to the jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Index
+.jobs-wrapper {
+  width: 51.5%;
+  margin: 0 auto;
+  margin-bottom: 4.5rem;
+}
+
+.job-listing {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 0.25fr;
+  grid-gap: 2rem;
+  padding: 30px 45px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.job-descrip {
+  grid-column: 1 / 4;
+}
+
+.job-basic-info {
+  div a {
+    text-decoration: none;
+    color: red;
+  }
+
+  div a:hover {
+    font-weight: 600;
+  }
+}
+
+// Show
