@@ -11,12 +11,18 @@
     <h2 class='jobs-title'>Jobs</h2>
     <% @jobs.each do |j| %>
       <div class='job-listing'>
-        <div><span class='job-listing-property-title'>Name</span>: <a href="/jobs/<%= j.id %>"><%= j.name %></a></div>
-        <div><span class='job-listing-property-title'>Origin</span>: <%= j.origin %></div>
-        <div><span class='job-listing-property-title'>Destination</span>: <%= j.destination %></div>
-        <div><span class='job-listing-property-title'>Cost</span>: $<%= j.cost %></div>
-        <div><span class='job-listing-property-title'>Containers Needed</span>: <%= j.containers_needed %></div>
-        <div><span class='job-listing-property-title'>Description</span>: <%= j.descrip %></div>
+        <div class='job-basic-info'>
+          <div><span class='job-listing-property-title'>Name</span>: <a href="/jobs/<%= j.id %>"><%= j.name %></a></div>
+          <div><span class='job-listing-property-title'>Origin</span>: <%= j.origin %></div>
+          <div><span class='job-listing-property-title'>Destination</span>: <%= j.destination %></div>
+        </div>
+        <div class='job-add-info'>
+          <div><span class='job-listing-property-title'>Cost</span>: $<%= j.cost %></div>
+          <div><span class='job-listing-property-title'>Containers Needed</span>: <%= j.containers_needed %></div>
+        </div>
+        <div class='job-descrip'>
+          <div><span class='job-listing-property-title'>Description</span>: <%= j.descrip %></div>
+        </div>
       </div>
     <% end %>
   </div>
