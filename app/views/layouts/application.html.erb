@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   </head>
 
   <body>
@@ -17,7 +17,8 @@
       <li><a href="/boats">BOATS</a></li>
 
       <% if user_signed_in? %>
-        <li><%= link_to "PROFILE", user_profile_path(current_user) %>  </li>
+      	<li><%= link_to "NEW JOB", new_job_path %></li>
+        <li><%= link_to "PROFILE", user_profile_path(current_user) %></li>
         <li> <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><a href="/users/sign_in">LOGIN</a></li>

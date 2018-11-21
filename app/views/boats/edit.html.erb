@@ -1,5 +1,13 @@
 <h1>Boats#edit</h1>
 
+<%= form_for @boat do |b| %>
+  <div class="">
+    Add job to boat: <%= select_tag "jobs", options_from_collection_for_select(Job.all,"id", :showcase)%>
+  </div>
+<% end %>
+
+
+
 <%= form_for @boat do |b|%>
   <div class="boat-name">
     Boat name:
@@ -22,5 +30,5 @@
 
   <br>
 
-  
+
 <% end %>

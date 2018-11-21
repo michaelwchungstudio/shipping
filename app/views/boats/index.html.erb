@@ -1,13 +1,26 @@
-<h1>Boats</h1>
-<% @boat.each do |b|%>
-  <div class="">
-    <a href="/boats/<%= b.id%>">Boat name:</a> <strong><%= b.name %></strong>
-  </div>
-  <div class="">
-    Boat Container Number: <strong><%= b.no_containers %></strong>
-  </div>
-  <div class="">
-    Boat location:  <strong><%= b.loc %></strong>
-  </div>
-  <br>
-<% end %>
+<div class='boat-wrapper'>
+  <h2 class='page-title'>Boats</h2>
+
+  <%= link_to 'Create Boat', new_boat_path %>
+
+  <% @boat.each_with_index do |b, i| %>
+    <div class='boat-listing'>
+      <% if i % 5 == 1 %>
+        <div class='boat-image ship1'></div>
+      <% elsif i % 5 == 2 %>
+        <div class='boat-image ship2'></div>
+      <% elsif i % 5 == 3 %>
+        <div class='boat-image ship3'></div>
+      <% elsif i % 5 == 4 %>
+        <div class='boat-image ship4'></div>
+      <% else %>
+        <div class='boat-image ship5'></div>
+      <% end %>
+      <div class='boat-listing-information'>
+        <div><strong>Name</strong>: <a href="/boats/<%= b.id %>"><%= b.name %></a></div>
+        <div><strong>Number of containers</strong>: <%= b.no_containers %></div>
+        <div><strong>Location</strong>: <%= b.loc %></div>
+      </div>
+    </div>
+  <% end %>
+</div>
