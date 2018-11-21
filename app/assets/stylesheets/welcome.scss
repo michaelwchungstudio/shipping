@@ -56,41 +56,16 @@
 
 // ------------------------------------
 
-.image-wrapper {
-	width: 100%;
-	height: 500px;
-	background-color: blue;
-}
-
-.about-us {
-	margin-top: 110px;
-	padding: 0 100px;
-	padding-top: 20px;
-	position: absolute;
-	top: 700px;
-	background-color: white;
-}
-
-.about-us h1 {
-	font-size: 2em;
-	text-align: center;
-	margin-bottom: 15px;
-}
-
-
-
+// Styling for Vimeo Vid
 iframe {
 	width: 100vw;
 	min-width: 1400px;
 	height: 100vh;
-	// height: 799px;
-	// z-index: -99;
 	margin: 0 auto;
 	margin-top: -108px;
-	// text-align: center;
-	// background-color: black;
 }
 
+// Styling for wrapper containing Vid and Tagline
 .vid-wrapper {
 	background-color: black;
 	height: 698px;
@@ -98,6 +73,7 @@ iframe {
 	text-align: center;
 }
 
+// Styling for Tagline
 .tag-line {
 	margin: 0 auto;
 	position: absolute;
