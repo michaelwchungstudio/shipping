@@ -67,9 +67,11 @@ iframe {
 // Styling for wrapper containing Vid and Tagline
 .vid-wrapper {
 	background-color: black;
-	height: 87.2vh;
+	width: 100vw;
+	height: 87.6vh;
 	overflow: hidden;
 	text-align: center;
+	margin: 0 auto;
 }
 
 // Styling for Tagline
