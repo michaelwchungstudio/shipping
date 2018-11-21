@@ -16,8 +16,10 @@
 		</div>
 	</div>
 
-	<%= link_to "EDIT JOB", edit_job_path(@job), :class => 'link-button' %>
-	<%= link_to 'DELETE JOB', @job, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-button' %>
+  <% if @job.user_id == current_user.id || current_user.admin? == true %>
+	  <%= link_to "EDIT JOB", edit_job_path(@job), :class => 'link-button' %>
+	  <%= link_to 'DELETE JOB', @job, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-button' %>
+  <% end %>
 
 	<h2 class='page-title'>Boats</h2>
 

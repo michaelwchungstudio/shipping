@@ -11,10 +11,19 @@ class JobsController < ApplicationController
     job = Job.new(jobs_params)
     job.user_id = current_user.id
     if job.save
-      redirect_to "/users/#{current_user.id}"
+      redirect_to "/users/profile/#{current_user.id}"
     else
       render "/jobs/new"
     end
+  end
+
+  def destroy
+    puts "huidhaisdasdkabdb"
+    puts params
+    @jobs = Job.where(id: params[:id]).first
+    @jobs.destroy
+
+    redirect_to "/jobs"
   end
 
   def edit

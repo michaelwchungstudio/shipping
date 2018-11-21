@@ -34,4 +34,76 @@
   }
 }
 
-// Show
+.new-job-wrapper{
+  display: grid;
+  grid-template-columns: .3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 2fr .5fr;
+  height: 60vh;
+  width: 30vw;
+  grid-column-gap: 1%;
+  margin: 0 auto;
+  margin-top: 4%;
+}
+
+.new-job-wrapper textarea{
+  height: 100%;
+}
+
+.new-job-title{
+  text-align: center;
+  margin-top: 3%;
+}
+
+.show-form-wrapper-long{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr .5fr;
+  grid-template-columns: .3fr 1fr;
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.show-form-wrapper-long textarea{
+  height: 100%;
+  width: 100%;
+}
+
+.show-form-wrapper-long input{
+  width: 100%;
+}
+
+.show-form-wrapper-long select{
+  width: 100%;
+}
+
+.show-form-wrapper-short{
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 2fr .5fr;
+  grid-template-columns: .3fr 1fr;
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.show-form-wrapper-short textarea{
+  height: 100%;
+  width: 100%;
+}
+
+.show-form-wrapper-short input{
+  width: 100%;
+}
+
+.show-form-wrapper-short select{
+  width: 100%;
+}
+
+.job-show-wrapper{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.job-edit-title{
+  text-align: center;
+}
