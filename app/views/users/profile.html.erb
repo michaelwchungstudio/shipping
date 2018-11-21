@@ -24,7 +24,7 @@
   <% if current_user.admin? == true %>
       <%= form_for @user , html: { method: :post } , url: '../../users/admin_form' do | u | %>
         <div class='profile-admin-form'> 
-         <div>Make admin?: </div><div><%= u.check_box 'admin?', :as => :boolean, input_html: {checked: false} %></div>
+         <div>Make admin?: </div><div><%= check_box_tag 'admin?', :as => :boolean, input_html: {checked: false} %></div>
          <%= hidden_field_tag 'user_id' , @user.id %>
           <%= u.submit 'submit', :class => "form-button", data: { confirm: 'Are you sure?' }%>
         </div>

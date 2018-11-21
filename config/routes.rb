@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # get 'boats/edit'
   # get 'boats/delete'
   # get 'boats/show'
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "registrations"}
   root to: "welcome#index"
   get "/users/profile/:id" => "users#profile", :as => :user_profile
   post "users/admin_form" => "users#admin"

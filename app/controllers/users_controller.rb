@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   def admin
 
   	@user = User.find(params[:user_id])
+  	stuff = params[:user]
+  	p stuff
+  
   	p "dasjashdsahjskdhajsdhadhljs"
   	p params
   	 if @user.update(admin?: params[:admin?])
