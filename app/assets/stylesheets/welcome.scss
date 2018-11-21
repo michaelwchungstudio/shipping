@@ -8,6 +8,7 @@
 	display: flex;
 	box-sizing: content-box;
 	border: 1px solid;
+	background-color: white;
 }
 
 .navbar li {
@@ -40,4 +41,45 @@
 	font-size: 1.6em;
 	font-weight: 700;
 	padding: 0 0;
+}
+
+#logotext:hover {
+	font-weight: bold;
+}
+
+.main-container{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+// ------------------------------------
+
+// Styling for Vimeo Vid
+iframe {
+	width: 100vw;
+	min-width: 1400px;
+	height: 100vh;
+	margin: 0 auto;
+	margin-top: -108px;
+}
+
+// Styling for wrapper containing Vid and Tagline
+.vid-wrapper {
+	background-color: black;
+	height: 698px;
+	overflow: hidden;
+	text-align: center;
+}
+
+// Styling for Tagline
+.tag-line {
+	margin: 0 auto;
+	position: absolute;
+	top: 350px;
+	left: 370px;
+	color: white;
+	font-size: 4em;
+	letter-spacing: 4px;
+	font-family: 'Montserrat', sans-serif;
 }
