@@ -1,20 +1,24 @@
-<% if user_signed_in? %>
-	<%= link_to "Create a New Job", new_job_path %>
-<% end %>
+<h2 class='page-title'>Jobs</h2>
+
 <% if @jobs.length != 0 %>
-<div class="job-wrapper">
-	<% for j in @jobs %>
-		<div><%= j.name %></div>
-		<div><%= j.origin %></div>
-		<div><%= j.destination %></div>
-		<div><%= j.descrip %></div>
-		<div><%= j.cost %></div>
-		<div><%= j.containers_needed %></div>
-		<%=  link_to "View Job", job_path(j) %>
-		<!-- <a href="jobs/<%= j.id %>/show"> View Job </a> -->
-	<% end %>
-</div>
+	<div class="jobs-wrapper">
+		<% for j in @jobs %>
+			<div class="job-listing">
+				<div class="job-basic-info">
+					<div><strong>Name:</strong> <a href="/jobs/<%= j.id %>"><%= j.name %></a></div>
+					<div><strong>Origin:</strong> <%= j.origin %></div>
+					<div><strong>Destination:</strong> <%= j.destination %></div>
+				</div>
+				<div class="job-add-info">
+					<div><strong>Cost:</strong> $<%= j.cost %></div>
+					<div><strong>Containers needed:</strong> <%= j.containers_needed %></div>
+				</div>
+				<div class="job-descrip">
+					<div><strong>Description:</strong> <%= j.descrip %></div>
+				</div>
+			</div>
+		<% end %>
+	</div>
 <% else %>
 	<div> No jobs available. What went wrong? </div>
-
 <% end %>

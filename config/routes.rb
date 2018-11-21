@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "welcome#index"
   get "/users/profile/:id" => "users#profile", :as => :user_profile
+  post "users/admin_form" => "users#admin"
 
   resources :boats
   resources :jobs

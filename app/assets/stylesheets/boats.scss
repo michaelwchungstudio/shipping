@@ -1,3 +1,79 @@
 // Place all the styles related to the boats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Index
+.boat-wrapper {
+  margin-bottom: 5rem;
+}
+
+.boat-listing {
+  display: grid;
+  width: 65%;
+  grid-template-columns: 1fr 0.75fr;
+  grid-column-gap: 3.5rem;
+  margin: 2.5rem auto 0;
+}
+
+.boat-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  height: 350px;
+}
+
+.ship1 { background-image: url('ship-1.jpg'); }
+.ship2 { background-image: url('ship-2.jpg'); }
+.ship3 { background-image: url('ship-3.jpg'); }
+.ship4 { background-image: url('ship-4.jpg'); }
+.ship5 { background-image: url('ship-5.jpg'); }
+
+.boat-listing-information {
+  div:first-child {
+    margin-top: 20px;
+  }
+
+  div {
+    margin-bottom: 3.25px;
+  }
+
+  div a {
+    text-decoration: none;
+    color: red;
+  }
+
+  div a:hover {
+    font-weight: 600;
+  }
+}
+
+// Show
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 35px auto 0;
+  color: black;
+  text-decoration: none;
+}
+
+.link-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.site-link {
+  text-decoration: none;
+  color: red;
+}
+
+.site-link:hover {
+  font-weight: 600;
+}

@@ -1,5 +1,5 @@
 <div class="job-edit-wrapper">
-
+<h2 class="job-edit-title">Edit the job by filling out the form where you want your changes.</h2>
 <% holder = [] %>
 <% checker = false %>
 
@@ -12,17 +12,27 @@
 		<% holder.push(b) %>
 	<% end %>
 <% end %>
+<% counter = 0 %>
+<% for b in @job.boats %>
+	<% counter += b.no_containers %>
+<% end %>
+
 <%= form_for @job do |j| %>
 
 
-
-Add boat to job: <%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ) %>
-<div>Name: <%= j.text_field :name, placeholder: "#{@job.name}" %> </div>
-<div>Origin: <%= j.text_field :origin, placeholder: "#{@job.origin}"%></div>
-<div>Destination: <%= j.text_field :destination, placeholder: "#{@job.destination}" %> </div>
-<div>Containers Needed: <%= j.number_field :containers_needed , placeholder: "#{@job.cost}"%></div>
-<div>Cost: <%= j.number_field :cost, step: :any %></div>
-<div>Description: <%= j.text_area :descrip, placeholder: "#{@job.descrip}"%></div>
-<%= j.submit %>
-
+	<% if counter <= @job.containers_needed %>
+	<div class="show-form-wrapper-long">
+		<div>Add a boat: </div><div><%= select_tag "boats", options_from_collection_for_select(holder, "id", :showcase ), :include_blank => true %></div>
+	<% else %>
+		<div class="show-form-wrapper-short">
+	<% end %>
+	<div>Remove a boat: </div><div><%= select_tag "boats_remove", options_from_collection_for_select(@job.boats, "id", :showcase ), :include_blank => true %></div>
+	<div>Name: </div><div><%= j.text_field :name, placeholder: "#{@job.name}" %> </div>
+	<div>Origin: </div><div> <%= j.text_field :origin, placeholder: "#{@job.origin}"%></div>
+	<div>Destination: </div><div> <%= j.text_field :destination, placeholder: "#{@job.destination}" %> </div>
+	<div>Containers Needed: </div><div><%= j.number_field :containers_needed , placeholder: "#{@job.cost}"%></div>
+	<div>Cost: </div><div><%= j.number_field :cost, step: :any %></div>
+	<div>Description: </div><div><%= j.text_area :descrip, placeholder: "#{@job.descrip}"%></div>
+	<%= j.submit 'submit', :class => "form-button", data: { confirm: 'Are you sure?' } %>
+</div>
 <% end %>
