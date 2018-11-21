@@ -1,21 +1,18 @@
-<h1>Boats#new</h1>
-<%= form_for Boat.new do |b|%>
-  <div class="boat-name">
-    Boat name:
-    <%= b.text_field :name %>
-  </div>
+<div class='registration-content'>
+  <h2 class='page-title'>New Boat</h2>
 
-  <div class="boat-no_containers">
-    Container Number:
-    <%= b.text_field :no_containers %>
-  </div>
+  <div class='registration-form'>
+    <%= form_for Boat.new do |b|%>
+        <%= b.label :name, 'Boat Name', :class => 'form-title' %>
+        <%= b.text_field :name, :class => 'form-text-field' %>
 
-  <div class="boat-loc">
-    Boat location:
-    <%= b.text_field :loc %>
-  </div>
+        <%= b.label :no_containers, 'Num of Containers', :class => 'form-title' %>
+        <%= b.text_field :no_containers, :class => 'form-text-field' %>
 
-  <div class="submit">
-    <%= b.submit%>
+        <%= b.label :loc, :class =>'form-title' %>
+        <%= b.text_field :loc, :class => 'form-text-field' %>
+
+        <%= b.submit "Submit", :class => "form-button" %>
+    <% end%>
   </div>
-<% end%>
+</div>

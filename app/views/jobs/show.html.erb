@@ -1,26 +1,35 @@
-<div class="job-show-wrapper">
-	<h1>Job: </h1>
-	<div><%= @job.name %></div>
-	<div><%= @job.origin %></div>
-	<div><%= @job.destination %></div>
-	<div><%= @job.descrip %></div>
-	<div><%= @job.cost %></div>
-	<div><%= @job.containers_needed %></div>
-	<div>Boats: </div>
+<div class="jobs-wrapper">
+	<h2 class='page-title'><%= @job.name %></h2>
+
+	<div class="job-listing">
+		<div class="job-basic-info">
+			<div><strong>Name:</strong> <%= @job.name %></div>
+			<div><strong>Origin:</strong> <%= @job.origin %></div>
+			<div><strong>Destination:</strong> <%= @job.destination %></div>
+		</div>
+		<div class="job-add-info">
+			<div><strong>Cost:</strong> $<%= @job.cost %></div>
+			<div><strong>Containers needed:</strong> <%= @job.containers_needed %></div>
+		</div>
+		<div class="job-descrip">
+			<div><strong>Description:</strong> <%= @job.descrip %></div>
+		</div>
+	</div>
+
+	<%= link_to "EDIT JOB", edit_job_path(@job), :class => 'link-button' %>
+	<%= link_to 'DELETE JOB', @job, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-button' %>
+
+	<h2 class='page-title'>Boats</h2>
 	<% b = @job.boats %>
 	<% if b.length != 0%>
 		<% for boat in b %>
-			<div><%= boat.name %></div>
+			<div><a class='site-link' href="/boats/<%= boat.id %>"><%= boat.name %></a></div>
 		<% end %>
 	<% else %>
-		<div>No boats assigned to this job</div>
+		<div>No boats assigned to this job.</div>
 	<% end %>
 	<div>
-		<%= link_to "Edit this job", edit_job_path(@job) %>
-		<%= link_to 'Delete this job',  @job,  method: :delete, data: { confirm: 'Are you sure?' } %>
-
 
 	</div>
 
 </div>
-
