@@ -5,16 +5,16 @@
 		<% for j in @jobs %>
 			<div class="job-listing">
 				<div class="job-basic-info">
-					<div>Name: <a href="/jobs/<%= j.id %>"><%= j.name %></a></div>
-					<div>Origin: <%= j.origin %></div>
-					<div>Destination: <%= j.destination %></div>
+					<div><strong>Name:</strong> <a href="/jobs/<%= j.id %>"><%= j.name %></a></div>
+					<div><strong>Origin:</strong> <%= j.origin %></div>
+					<div><strong>Destination:</strong> <%= j.destination %></div>
 				</div>
 				<div class="job-add-info">
-					<div>Cost: $<%= j.cost %></div>
-					<div>Containers needed: <%= j.containers_needed %></div>
+					<div><strong>Cost:</strong> $<%= j.cost %></div>
+					<div><strong>Containers needed:</strong> <%= j.containers_needed %></div>
 				</div>
 				<div class="job-descrip">
-					<div>Description: <%= j.descrip %></div>
+					<div><strong>Description:</strong> <%= j.descrip %></div>
 				</div>
 			</div>
 		<% end %>
