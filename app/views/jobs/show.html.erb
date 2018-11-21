@@ -20,8 +20,9 @@
 	<%= link_to 'DELETE JOB', @job, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'link-button' %>
 
 	<h2 class='page-title'>Boats</h2>
+
 	<% b = @job.boats %>
-	<% if b.length != 0%>
+	<% if b.length != 0 %>
 		<% for boat in b %>
 			<div><a class='site-link' href="/boats/<%= boat.id %>"><%= boat.name %></a></div>
 		<% end %>
@@ -29,7 +30,5 @@
 		<div>No boats assigned to this job.</div>
 	<% end %>
 	<div>
-
-	</div>
 
 </div>
