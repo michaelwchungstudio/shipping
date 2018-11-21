@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Index
 .boat-wrapper {
   margin-bottom: 5rem;
 }
@@ -45,4 +46,34 @@
   div a:hover {
     font-weight: 600;
   }
+}
+
+// Show
+.link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 100px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  margin: 35px auto 0;
+  color: black;
+  text-decoration: none;
+}
+
+.link-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.site-link {
+  text-decoration: none;
+  color: red;
+}
+
+.site-link:hover {
+  font-weight: 600;
 }
